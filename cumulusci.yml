@@ -1,0 +1,25 @@
+minimum_cumulusci_version: '3.92.0'
+project:
+    name: CumulusCILearinigs
+    package:
+        name: SF Metadata
+        namespace: SF Managed Package
+        api_version: '61.0'
+    git:
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/CumulusCILearinigs/tests
+            options:
+                outputdir: robot/CumulusCILearinigs/results
+
+    robot_testdoc:
+        options:
+            path: robot/CumulusCILearinigs/tests
+            output: robot/CumulusCILearinigs/doc/CumulusCILearinigs_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
